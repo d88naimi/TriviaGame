@@ -6,27 +6,26 @@ var game = {
   counter: 100,
   theClock: 0,
   // correctAnswer: 0,
-  userClick: 0,
   unanswered: 5,
   answers: ["c","c","c","c","c"],
-
   userResponse: [],
 
 // create a loop to check results
 //condtional to see if choosen answer is correct else ++ 
+  
+
   result: function() { 
     for ( var i = 0; i < userResponse.length; i++ );
-    if (this.userResponses[i] === this.correct[i]) {
+    if (this.userResponse[i] === this.answers[i]) {
         this.correct++;
         this.incorrect--;
       }
-      if (this.userResponse[i] !== this.correct[i]) {
+      if (this.userResponse[i] !== this.answers[i]) {
         this.incorrect++;
         this.unanswered--;
 
       }
 },
-
 
 
 // begin game
@@ -36,7 +35,6 @@ var game = {
     this.windowtimer();
   },
 
-  
 
 // timer for 30 seconds 
     windowtimer: function(){
@@ -54,13 +52,8 @@ var game = {
         };
 
       },
-
-
 };
-
-
-
-
+console.log(game.userResponse);
   game.beginGame();
 
 // hide div until start button is clicked 
@@ -75,17 +68,24 @@ var game = {
 
   });
 
+  // set value of radio button to UserResponse 
 
-  $("#doneButton").click(function() {
-    alert("hello");
-    }); 
+   $("#radio").click( function (el) 
+   {
+    game.userResponse = game.userResponse[i];
+  });
+
+  // $("#doneButton").click(function() {
+  //   alert("hello");
+  //   }); 
 
     $("#doneButton").append( function() { 
+
+    // insert here stores userResponse function 
+      game.result();
     $('#unanswered').html("Unanswered: " + this.unanswered);
     $('#correct').html("Correct: " + this.correct);
-    $('#wrong').html("Wrong: " + this.incorrect);
-   
-
+    $('#wrong').html("Incorrect: " + this.incorrect);
 
 });
 
