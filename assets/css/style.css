@@ -1,5 +1,6 @@
 body{
 	line-height: : 50px;
+	background-color: blue;
 }
 
 
@@ -12,6 +13,9 @@ body{
 	font-size: 30px;
 	text-align: center;
 	/*display: none;*/
+	background-color: blue;
+	color: white;
+
 }
 	
 #timer{

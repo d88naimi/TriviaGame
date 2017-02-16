@@ -13,16 +13,20 @@ var game = {
 // create a loop to check results
 //condtional to see if choosen answer is correct else ++ 
   
-  getAnswer: function(radio) {
+  // getAnswer: function(radio) {
     
-
-    userResponse = $("#radio");
-
-  },
-
+  //   userResponse = $("#radio");
+  // },
   
+  stopGame: function() { 
+  //   if  $("input"["radio"]":checked" == answers) {
+  //     this.correct ++;
 
-  result: function() { 
+  //   }  else {
+  //     incorrect
+  //   },
+
+
     for ( var i = 0; i < userResponse.length; i++ );
     if (this.userResponse[i] === this.answers[i]) {
         this.correct++;
@@ -34,7 +38,6 @@ var game = {
 
       }
 },
-
 
 // begin game
   beginGame: function(){
@@ -80,17 +83,15 @@ var game = {
 
   //  $("#radio").click( function (el) 
   //  {
-  //   game.userResponse = game.userResponse[i];
-  // });
-
-  // $("#doneButton").click(function() {
-  //   alert("hello");
-  //   }); 
+  // 
+  $("#doneButton").click(function() {
+    alert("YeeeeeeePeeeeeee");
+    }); 
 
     $("#doneButton").append( function() { 
 
     // insert here stores userResponse function 
-      game.result();
+      game.stopGame();
     $('#unanswered').html("Unanswered: " + this.unanswered);
     $('#correct').html("Correct: " + this.correct);
     $('#wrong').html("Incorrect: " + this.incorrect);
