@@ -7,11 +7,19 @@ var game = {
   theClock: 0,
   // correctAnswer: 0,
   unanswered: 5,
-  answers: ["c","c","c","c","c"],
-  userResponse: [],
+  answers: ["1","1","1","1","1"],
+  userResponse: "",
 
 // create a loop to check results
 //condtional to see if choosen answer is correct else ++ 
+  
+  getAnswer: function(radio) {
+    
+
+    userResponse = $("#radio");
+
+  },
+
   
 
   result: function() { 
@@ -53,7 +61,7 @@ var game = {
 
       },
 };
-console.log(game.userResponse);
+// console.log(game.userResponse);
   game.beginGame();
 
 // hide div until start button is clicked 
@@ -70,10 +78,10 @@ console.log(game.userResponse);
 
   // set value of radio button to UserResponse 
 
-   $("#radio").click( function (el) 
-   {
-    game.userResponse = game.userResponse[i];
-  });
+  //  $("#radio").click( function (el) 
+  //  {
+  //   game.userResponse = game.userResponse[i];
+  // });
 
   // $("#doneButton").click(function() {
   //   alert("hello");
