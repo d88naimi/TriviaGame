@@ -1,3 +1,21 @@
+body{
+	line-height: : 50px;
+}
+
+
 #good {
 	color: blue;
 }
+
+
+#question {
+	font-size: 30px;
+	text-align: center;
+	/*display: none;*/
+}
+	
+#timer{
+	font-size: 65px;
+	text-align: center;
+}
+
