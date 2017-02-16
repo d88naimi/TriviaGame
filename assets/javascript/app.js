@@ -5,18 +5,29 @@ var game = {
   incorrect: 0,
   counter: 100,
   theClock: 0,
-  correctAnswer: 0,
-  userClick: 0
+  // correctAnswer: 0,
+  userClick: 0,
+  unanswered: 5,
+  answers: ["c","c","c","c","c"],
 
-  // Australia: Canberra,
-  // Taiwan: Taipei,
-  // Japan: Tokoyo,
-  // Colombia: Bogota,
-  // India: New Delhi,
+  userResponse: [],
+
+// create a loop to check results
+//condtional to see if choosen answer is correct else ++ 
+  result: function() { 
+    for ( var i = 0; i < userResponse.length; i++ );
+    if (this.userResponses[i] === this.correct[i]) {
+        this.correct++;
+        this.incorrect--;
+      }
+      if (this.userResponse[i] !== this.correct[i]) {
+        this.incorrect++;
+        this.unanswered--;
+
+      }
+},
 
 
-  
-// hide div until start button is clicked 
 
 // begin game
   beginGame: function(){
@@ -27,19 +38,11 @@ var game = {
 
   
 
-//condtional to see if choosen answe is correct else ++ 
-checkCorrectAnswer: function() {
-  if (  )
-
-}
-
-  
-  
 // timer for 30 seconds 
     windowtimer: function(){
       this.theClock = setInterval(thirtySeconds, 1000);
       function thirtySeconds() {
-        console.log(game.counter)
+        // console.log(game.counter)
         if (game.counter > 0) {
            game.counter--
 
@@ -52,15 +55,18 @@ checkCorrectAnswer: function() {
 
       },
 
+
 };
+
 
 
 
   game.beginGame();
 
-
-   $("#question").hide();
-   $("#timer").hide();
+// hide div until start button is clicked 
+  $("#question").hide();
+  $("#timer").hide();
+   // $("#lastPage").hide();
 
 
   $("#startButton").click( function () {
@@ -69,6 +75,28 @@ checkCorrectAnswer: function() {
 
   });
 
+
+  $("#doneButton").click(function() {
+    alert("hello");
+    }); 
+
+    $("#doneButton").append( function() { 
+    $('#unanswered').html("Unanswered: " + this.unanswered);
+    $('#correct').html("Correct: " + this.correct);
+    $('#wrong').html("Wrong: " + this.incorrect);
+   
+
+
+});
+
+   
+
+
+ // Australia: Canberra,
+  // Taiwan: Taipei,
+  // Japan: Tokoyo,
+  // Colombia: Bogota,
+  // India: New Delhi,
 
 
 
